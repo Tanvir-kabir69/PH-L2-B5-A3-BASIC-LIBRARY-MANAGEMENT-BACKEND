@@ -1,4 +1,4 @@
-# 📖 Project Name: Library Management API with Express, TypeScript & MongoDB
+# 📖 Project Name: Library Management API
 
 ## 🎯 Objective
 
