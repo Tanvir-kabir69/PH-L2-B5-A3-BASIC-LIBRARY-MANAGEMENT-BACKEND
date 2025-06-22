@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from 'express'
+import express, { Application } from 'express'
 import router from './app/routes'
 import globalErrorHandler from './app/utils/globalErrorHandler';
 import getAController from './app/utils/getAController';
