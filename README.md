@@ -8,9 +8,9 @@ Develop a **Library Management System** using **Express**, **TypeScript**, and *
 
 ## 🔧 Core technologies:
 
-*   Language and frameworks:  **node.js** using **express.js**
+*   Language and framework : **Jaascript** and **Typescript**   
+*   Rruntime and frameworks:  **node.js** using **express.js**
 *   Database and frameworks: **MongoDB** using **Mongoose**
-*   Dependencies: **Typescript**   
 
 Projects Features:
 
