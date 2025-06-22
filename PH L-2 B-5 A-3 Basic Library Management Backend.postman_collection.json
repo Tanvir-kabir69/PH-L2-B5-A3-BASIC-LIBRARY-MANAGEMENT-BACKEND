@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "ba718e45-1808-408e-9757-8feb58a250d4",
+		"name": "PH L-2 B-5 A-3 Basic Library Management Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39835522"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/books?filter=FANTASY&sortBy=createdAt&sort=desc&limit=5",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "FANTASY"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt"
+								},
+								{
+									"key": "sort",
+									"value": "desc"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create A Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"title\": \"Cosmos\",\r\n    \"author\": \"Carl Sagan\",\r\n    \"genre\": \"SCIENCE\",\r\n    \"isbn\": \"9780345539434\",\r\n    \"description\": \"A journey through space, time, and scientific discovery.\",\r\n    \"copies\": 5,\r\n    \"available\": true\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/books",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get A Single Book By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/books/6856ceba550317e6afa2ec59",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"books",
+								"6856ceba550317e6afa2ec59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update A Single Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"copies\": 50,\r\n    \"available\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/books/6856ceba550317e6afa2ec59",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"books",
+								"6856ceba550317e6afa2ec59"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Single Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"copies\": 50,\r\n    \"available\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/books/",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrows",
+			"item": [
+				{
+					"name": "Create A Borrow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"book\": \"856ced8550317e6afa2ec5f\",\r\n  \"quantity\": 1,\r\n  \"dueDate\": \"2025-07-18T00:00:00.000Z\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/borrow",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrowing Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n  \"book\": \"856ced8550317e6afa2ec5f\",\r\n  \"quantity\": 1,\r\n  \"dueDate\": \"2025-07-18T00:00:00.000Z\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "{{ph-l2-b5-a3-basic-library-management-backend}}/borrow",
+							"host": [
+								"{{ph-l2-b5-a3-basic-library-management-backend}}"
+							],
+							"path": [
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Set Up Manual",
+			"item": [],
+			"description": "set your global variable as,\n\nph-l2-b5-a3-basic-library-management-backend = tlocalhost:3000/api"
+		},
+		{
+			"name": "root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}
